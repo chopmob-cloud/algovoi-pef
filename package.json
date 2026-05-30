@@ -1,0 +1,36 @@
+{
+  "name": "@algovoi/pef",
+  "version": "0.1.0",
+  "description": "Payment Evidence Frame (PEF) v1 -- AlgoVoi canonical wrapper for payment-lifecycle receipts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/index.test.js"
+  },
+  "keywords": [
+    "x402",
+    "payment",
+    "receipt",
+    "jcs",
+    "pef",
+    "canonicalization",
+    "trust",
+    "evidence"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chopmob-cloud/algovoi-pef"
+  },
+  "dependencies": {
+    "canonicalize": "^1.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "typescript": "^5.9.3"
+  }
+}
