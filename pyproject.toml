@@ -39,3 +39,6 @@ packages = ["algovoi_pef"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "live: marks tests that require a live api.algovoi.co.uk connection (deselect with -m 'not live')",
+]
