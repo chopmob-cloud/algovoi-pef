@@ -14,7 +14,7 @@ AlgoVoi payment-lifecycle receipts. Each frame carries a byte-deterministic
 `frame_id` (SHA-256 of the JCS-canonical preimage) and an optional detached
 RFC 9421 signature field.
 
-Normative spec: `draft-hopley-x402-payment-evidence-frame` (IETF I-D, filing pending).  
+Normative spec: [`draft-hopley-x402-payment-evidence-frame-00`](https://datatracker.ietf.org/doc/draft-hopley-x402-payment-evidence-frame/) (IETF I-D, published 2026-05-30).  
 Canonicalisation pin: `urn:x402:canonicalisation:jcs-rfc8785-v1`.
 
 ## Install
@@ -234,7 +234,7 @@ npm run build && npm test
 
 ## Specification
 
-- **Normative spec**: `draft-hopley-x402-payment-evidence-frame` (IETF I-D, filing pending)
+- **Normative spec**: [`draft-hopley-x402-payment-evidence-frame-00`](https://datatracker.ietf.org/doc/draft-hopley-x402-payment-evidence-frame/) (IETF I-D, published 2026-05-30)
 - **Canonicalisation pin**: [`draft-hopley-x402-canonicalisation-jcs-v1`](https://datatracker.ietf.org/doc/draft-hopley-x402-canonicalisation-jcs-v1/)
 - **Receipt format I-Ds**:
   - [`draft-hopley-x402-compliance-receipt`](https://datatracker.ietf.org/doc/draft-hopley-x402-compliance-receipt/)
