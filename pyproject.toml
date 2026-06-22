@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "algovoi-pef"
-version = "0.1.0"
+version = "0.1.1"
 description = "Payment Evidence Frame (PEF) v1 -- AlgoVoi's canonical wrapper for payment-lifecycle receipts"
 readme = "README.md"
 license = { text = "Apache-2.0" }
