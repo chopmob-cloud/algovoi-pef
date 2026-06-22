@@ -213,6 +213,23 @@ The same corpus now has **576/576 cumulative byte-for-byte agreements** across
 eight vector sets covering the full AlgoVoi agentic-payment receipt stack
 (admission, settlement, cancellation, refund, composite verdict, PEF).
 
+## Conformance vectors
+
+The 8 `pef_v1` conformance vectors are bundled in this repo under
+[`vectors/pef_v1.json`](./vectors/pef_v1.json), covering all five claim types.
+Each vector carries the `preimage`, the inner `receipt`, and the expected
+`receipt_hash` and `frame_id` (SHA-256 over JCS canonical bytes). The package is
+checked against every vector by [`tests/test_vectors.py`](./tests/test_vectors.py):
+
+```bash
+python -m pytest tests/test_vectors.py -v
+```
+
+The vectors are mirrored from the authoritative corpus repo
+[`chopmob-cloud/algovoi-jcs-conformance-vectors`](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors)
+(set `pef_v1`), which remains the source of truth. See
+[`vectors/README.md`](./vectors/README.md) for details.
+
 ## Tests
 
 ```bash

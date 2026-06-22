@@ -1,0 +1,320 @@
+{
+  "vector_set_id": "pef_v1",
+  "description": "Payment Evidence Frame v1 -- frame_id canonicalisation vectors. 8 vectors across all 5 PEF claim types.",
+  "canon_pin": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+  "pef_version": "1",
+  "vectors": [
+    {
+      "vector_id": "pef_v1_001",
+      "description": "payment_admission ALLOW -- base admission",
+      "claim_type": "payment_admission",
+      "receipt_format": "compliance-receipt-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_admission",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "jurisdiction_flags": [
+            "EU",
+            "UK"
+          ],
+          "payer_ref": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "prev_hash": null,
+          "screen_provider_did": "did:web:api.algovoi.co.uk",
+          "screen_result": "ALLOW",
+          "screen_timestamp_ms": 1748534600000
+        },
+        "receipt_format": "compliance-receipt-v1",
+        "receipt_hash": "sha256:4ac26aa07bedc92a617e0f9475cacdb9fcd11f89ebbd21d71327e7e1ee207ad7"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "jurisdiction_flags": [
+          "EU",
+          "UK"
+        ],
+        "payer_ref": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "prev_hash": null,
+        "screen_provider_did": "did:web:api.algovoi.co.uk",
+        "screen_result": "ALLOW",
+        "screen_timestamp_ms": 1748534600000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImp1cmlzZGljdGlvbl9mbGFncyI6WyJFVSIsIlVLIl0sInBheWVyX3JlZiI6InNoYTI1NjphYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhIiwicHJldl9oYXNoIjpudWxsLCJzY3JlZW5fcHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInNjcmVlbl9yZXN1bHQiOiJBTExPVyIsInNjcmVlbl90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDB9",
+      "expected_receipt_hash": "sha256:4ac26aa07bedc92a617e0f9475cacdb9fcd11f89ebbd21d71327e7e1ee207ad7",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X2FkbWlzc2lvbiIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsiY2Fub25fdmVyc2lvbiI6InVybjp4NDAyOmNhbm9uaWNhbGlzYXRpb246amNzLXJmYzg3ODUtdjEiLCJqdXJpc2RpY3Rpb25fZmxhZ3MiOlsiRVUiLCJVSyJdLCJwYXllcl9yZWYiOiJzaGEyNTY6YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSIsInByZXZfaGFzaCI6bnVsbCwic2NyZWVuX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJzY3JlZW5fcmVzdWx0IjoiQUxMT1ciLCJzY3JlZW5fdGltZXN0YW1wX21zIjoxNzQ4NTM0NjAwMDAwfSwicmVjZWlwdF9mb3JtYXQiOiJjb21wbGlhbmNlLXJlY2VpcHQtdjEiLCJyZWNlaXB0X2hhc2giOiJzaGEyNTY6NGFjMjZhYTA3YmVkYzkyYTYxN2UwZjk0NzVjYWNkYjlmY2QxMWY4OWViYmQyMWQ3MTMyN2U3ZTFlZTIwN2FkNyJ9",
+      "expected_frame_id": "sha256:09929082c83d5006f61f06bb12eb58cc2c21acebd70a31bca3cb26169c11b6bf"
+    },
+    {
+      "vector_id": "pef_v1_002",
+      "description": "payment_admission DENY -- sanctions hit",
+      "claim_type": "payment_admission",
+      "receipt_format": "compliance-receipt-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_admission",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "jurisdiction_flags": [
+            "EU",
+            "UK"
+          ],
+          "payer_ref": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "prev_hash": null,
+          "screen_provider_did": "did:web:api.algovoi.co.uk",
+          "screen_result": "DENY",
+          "screen_timestamp_ms": 1748534601000
+        },
+        "receipt_format": "compliance-receipt-v1",
+        "receipt_hash": "sha256:5f91030404551956e6e513d26e7362cae23ca24e4b25cec3b60f727c57344ad7"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "jurisdiction_flags": [
+          "EU",
+          "UK"
+        ],
+        "payer_ref": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "prev_hash": null,
+        "screen_provider_did": "did:web:api.algovoi.co.uk",
+        "screen_result": "DENY",
+        "screen_timestamp_ms": 1748534601000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImp1cmlzZGljdGlvbl9mbGFncyI6WyJFVSIsIlVLIl0sInBheWVyX3JlZiI6InNoYTI1NjpiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiIiwicHJldl9oYXNoIjpudWxsLCJzY3JlZW5fcHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInNjcmVlbl9yZXN1bHQiOiJERU5ZIiwic2NyZWVuX3RpbWVzdGFtcF9tcyI6MTc0ODUzNDYwMTAwMH0=",
+      "expected_receipt_hash": "sha256:5f91030404551956e6e513d26e7362cae23ca24e4b25cec3b60f727c57344ad7",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X2FkbWlzc2lvbiIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsiY2Fub25fdmVyc2lvbiI6InVybjp4NDAyOmNhbm9uaWNhbGlzYXRpb246amNzLXJmYzg3ODUtdjEiLCJqdXJpc2RpY3Rpb25fZmxhZ3MiOlsiRVUiLCJVSyJdLCJwYXllcl9yZWYiOiJzaGEyNTY6YmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYiIsInByZXZfaGFzaCI6bnVsbCwic2NyZWVuX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJzY3JlZW5fcmVzdWx0IjoiREVOWSIsInNjcmVlbl90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDEwMDB9LCJyZWNlaXB0X2Zvcm1hdCI6ImNvbXBsaWFuY2UtcmVjZWlwdC12MSIsInJlY2VpcHRfaGFzaCI6InNoYTI1Njo1ZjkxMDMwNDA0NTUxOTU2ZTZlNTEzZDI2ZTczNjJjYWUyM2NhMjRlNGIyNWNlYzNiNjBmNzI3YzU3MzQ0YWQ3In0=",
+      "expected_frame_id": "sha256:a063f133ad12912d0df09d351307b7da7376d14700fe9a85a6e7895347d69b16"
+    },
+    {
+      "vector_id": "pef_v1_003",
+      "description": "payment_settlement SETTLED on Algorand",
+      "claim_type": "payment_settlement",
+      "receipt_format": "settlement-attestation-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_settlement",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "settled_payment_ref": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "settlement_amount": {
+            "amount_minor": "1000000",
+            "asset_id": "USDC"
+          },
+          "settlement_chain": "algo",
+          "settlement_provider_did": "did:web:api.algovoi.co.uk",
+          "settlement_result": "SETTLED",
+          "settlement_timestamp_ms": 1748534700000
+        },
+        "receipt_format": "settlement-attestation-v1",
+        "receipt_hash": "sha256:ba5b311fe823cdf0e793573d1c4f73cd4dcda4f9393d12bd19064e6199d26e1a"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "settled_payment_ref": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "settlement_amount": {
+          "amount_minor": "1000000",
+          "asset_id": "USDC"
+        },
+        "settlement_chain": "algo",
+        "settlement_provider_did": "did:web:api.algovoi.co.uk",
+        "settlement_result": "SETTLED",
+        "settlement_timestamp_ms": 1748534700000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsInNldHRsZWRfcGF5bWVudF9yZWYiOiJzaGEyNTY6Y2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjYyIsInNldHRsZW1lbnRfYW1vdW50Ijp7ImFtb3VudF9taW5vciI6IjEwMDAwMDAiLCJhc3NldF9pZCI6IlVTREMifSwic2V0dGxlbWVudF9jaGFpbiI6ImFsZ28iLCJzZXR0bGVtZW50X3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJzZXR0bGVtZW50X3Jlc3VsdCI6IlNFVFRMRUQiLCJzZXR0bGVtZW50X3RpbWVzdGFtcF9tcyI6MTc0ODUzNDcwMDAwMH0=",
+      "expected_receipt_hash": "sha256:ba5b311fe823cdf0e793573d1c4f73cd4dcda4f9393d12bd19064e6199d26e1a",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X3NldHRsZW1lbnQiLCJmcmFtZV9wcm92aWRlcl9kaWQiOiJkaWQ6d2ViOmFwaS5hbGdvdm9pLmNvLnVrIiwiZnJhbWVfdGltZXN0YW1wX21zIjoxNzQ4NTM0NjAwMDAwLCJwZWZfdmVyc2lvbiI6IjEiLCJyZWNlaXB0Ijp7ImNhbm9uX3ZlcnNpb24iOiJ1cm46eDQwMjpjYW5vbmljYWxpc2F0aW9uOmpjcy1yZmM4Nzg1LXYxIiwic2V0dGxlZF9wYXltZW50X3JlZiI6InNoYTI1NjpjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjIiwic2V0dGxlbWVudF9hbW91bnQiOnsiYW1vdW50X21pbm9yIjoiMTAwMDAwMCIsImFzc2V0X2lkIjoiVVNEQyJ9LCJzZXR0bGVtZW50X2NoYWluIjoiYWxnbyIsInNldHRsZW1lbnRfcHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInNldHRsZW1lbnRfcmVzdWx0IjoiU0VUVExFRCIsInNldHRsZW1lbnRfdGltZXN0YW1wX21zIjoxNzQ4NTM0NzAwMDAwfSwicmVjZWlwdF9mb3JtYXQiOiJzZXR0bGVtZW50LWF0dGVzdGF0aW9uLXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OmJhNWIzMTFmZTgyM2NkZjBlNzkzNTczZDFjNGY3M2NkNGRjZGE0ZjkzOTNkMTJiZDE5MDY0ZTYxOTlkMjZlMWEifQ==",
+      "expected_frame_id": "sha256:52b5cb5ef778c16d67016ef0b354a2bdbdc36970bf49ed419c976000612fb331"
+    },
+    {
+      "vector_id": "pef_v1_004",
+      "description": "payment_settlement SETTLED on Base (Ethereum:84532)",
+      "claim_type": "payment_settlement",
+      "receipt_format": "settlement-attestation-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_settlement",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "settled_payment_ref": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "settlement_amount": {
+            "amount_minor": "2000000",
+            "asset_id": "USDC"
+          },
+          "settlement_chain": "ethereum:84532",
+          "settlement_provider_did": "did:web:api.algovoi.co.uk",
+          "settlement_result": "SETTLED",
+          "settlement_timestamp_ms": 1748534800000
+        },
+        "receipt_format": "settlement-attestation-v1",
+        "receipt_hash": "sha256:718281f6f7f5e0969338d84b47a8adef83150c2089c7969aaee387b919ee6228"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "settled_payment_ref": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "settlement_amount": {
+          "amount_minor": "2000000",
+          "asset_id": "USDC"
+        },
+        "settlement_chain": "ethereum:84532",
+        "settlement_provider_did": "did:web:api.algovoi.co.uk",
+        "settlement_result": "SETTLED",
+        "settlement_timestamp_ms": 1748534800000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsInNldHRsZWRfcGF5bWVudF9yZWYiOiJzaGEyNTY6ZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZCIsInNldHRsZW1lbnRfYW1vdW50Ijp7ImFtb3VudF9taW5vciI6IjIwMDAwMDAiLCJhc3NldF9pZCI6IlVTREMifSwic2V0dGxlbWVudF9jaGFpbiI6ImV0aGVyZXVtOjg0NTMyIiwic2V0dGxlbWVudF9wcm92aWRlcl9kaWQiOiJkaWQ6d2ViOmFwaS5hbGdvdm9pLmNvLnVrIiwic2V0dGxlbWVudF9yZXN1bHQiOiJTRVRUTEVEIiwic2V0dGxlbWVudF90aW1lc3RhbXBfbXMiOjE3NDg1MzQ4MDAwMDB9",
+      "expected_receipt_hash": "sha256:718281f6f7f5e0969338d84b47a8adef83150c2089c7969aaee387b919ee6228",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X3NldHRsZW1lbnQiLCJmcmFtZV9wcm92aWRlcl9kaWQiOiJkaWQ6d2ViOmFwaS5hbGdvdm9pLmNvLnVrIiwiZnJhbWVfdGltZXN0YW1wX21zIjoxNzQ4NTM0NjAwMDAwLCJwZWZfdmVyc2lvbiI6IjEiLCJyZWNlaXB0Ijp7ImNhbm9uX3ZlcnNpb24iOiJ1cm46eDQwMjpjYW5vbmljYWxpc2F0aW9uOmpjcy1yZmM4Nzg1LXYxIiwic2V0dGxlZF9wYXltZW50X3JlZiI6InNoYTI1NjpkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkIiwic2V0dGxlbWVudF9hbW91bnQiOnsiYW1vdW50X21pbm9yIjoiMjAwMDAwMCIsImFzc2V0X2lkIjoiVVNEQyJ9LCJzZXR0bGVtZW50X2NoYWluIjoiZXRoZXJldW06ODQ1MzIiLCJzZXR0bGVtZW50X3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJzZXR0bGVtZW50X3Jlc3VsdCI6IlNFVFRMRUQiLCJzZXR0bGVtZW50X3RpbWVzdGFtcF9tcyI6MTc0ODUzNDgwMDAwMH0sInJlY2VpcHRfZm9ybWF0Ijoic2V0dGxlbWVudC1hdHRlc3RhdGlvbi12MSIsInJlY2VpcHRfaGFzaCI6InNoYTI1Njo3MTgyODFmNmY3ZjVlMDk2OTMzOGQ4NGI0N2E4YWRlZjgzMTUwYzIwODljNzk2OWFhZWUzODdiOTE5ZWU2MjI4In0=",
+      "expected_frame_id": "sha256:2084d0ada5467c65d31cd15893e42e2cf0f4751a06cdcae2cb227c0024be0d02"
+    },
+    {
+      "vector_id": "pef_v1_005",
+      "description": "payment_cancellation USER_REQUESTED",
+      "claim_type": "payment_cancellation",
+      "receipt_format": "cancellation-receipt-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_cancellation",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "cancellation_reason": "USER_REQUESTED",
+          "mandate_ref": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "provider_did": "did:web:api.algovoi.co.uk",
+          "timestamp_ms": 1748534900000
+        },
+        "receipt_format": "cancellation-receipt-v1",
+        "receipt_hash": "sha256:58f80eec1599375acb01df2c0982a712c35d79a227349f53195def829f32e4a4"
+      },
+      "receipt": {
+        "cancellation_reason": "USER_REQUESTED",
+        "mandate_ref": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "provider_did": "did:web:api.algovoi.co.uk",
+        "timestamp_ms": 1748534900000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5jZWxsYXRpb25fcmVhc29uIjoiVVNFUl9SRVFVRVNURUQiLCJtYW5kYXRlX3JlZiI6InNoYTI1NjplZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlIiwicHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInRpbWVzdGFtcF9tcyI6MTc0ODUzNDkwMDAwMH0=",
+      "expected_receipt_hash": "sha256:58f80eec1599375acb01df2c0982a712c35d79a227349f53195def829f32e4a4",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X2NhbmNlbGxhdGlvbiIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsiY2FuY2VsbGF0aW9uX3JlYXNvbiI6IlVTRVJfUkVRVUVTVEVEIiwibWFuZGF0ZV9yZWYiOiJzaGEyNTY6ZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZSIsInByb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJ0aW1lc3RhbXBfbXMiOjE3NDg1MzQ5MDAwMDB9LCJyZWNlaXB0X2Zvcm1hdCI6ImNhbmNlbGxhdGlvbi1yZWNlaXB0LXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OjU4ZjgwZWVjMTU5OTM3NWFjYjAxZGYyYzA5ODJhNzEyYzM1ZDc5YTIyNzM0OWY1MzE5NWRlZjgyOWYzMmU0YTQifQ==",
+      "expected_frame_id": "sha256:d0b45c54b8f04bff07f9f6b8bd6019d4e6664ee33dea5c24ccd887eb279026ef"
+    },
+    {
+      "vector_id": "pef_v1_006",
+      "description": "payment_refund FULL",
+      "claim_type": "payment_refund",
+      "receipt_format": "refund-receipt-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_refund",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "original_payment_ref": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "provider_did": "did:web:api.algovoi.co.uk",
+          "refund_amount": {
+            "amount_minor": "1000000",
+            "asset_id": "USDC"
+          },
+          "refund_result": "FULL",
+          "timestamp_ms": 1748535000000
+        },
+        "receipt_format": "refund-receipt-v1",
+        "receipt_hash": "sha256:2b3df8335e4c707c685a5e247221a55ac97d0a221f2e9372b62e9e68636c67fe"
+      },
+      "receipt": {
+        "original_payment_ref": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "provider_did": "did:web:api.algovoi.co.uk",
+        "refund_amount": {
+          "amount_minor": "1000000",
+          "asset_id": "USDC"
+        },
+        "refund_result": "FULL",
+        "timestamp_ms": 1748535000000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJvcmlnaW5hbF9wYXltZW50X3JlZiI6InNoYTI1NjpmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmIiwicHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInJlZnVuZF9hbW91bnQiOnsiYW1vdW50X21pbm9yIjoiMTAwMDAwMCIsImFzc2V0X2lkIjoiVVNEQyJ9LCJyZWZ1bmRfcmVzdWx0IjoiRlVMTCIsInRpbWVzdGFtcF9tcyI6MTc0ODUzNTAwMDAwMH0=",
+      "expected_receipt_hash": "sha256:2b3df8335e4c707c685a5e247221a55ac97d0a221f2e9372b62e9e68636c67fe",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X3JlZnVuZCIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsib3JpZ2luYWxfcGF5bWVudF9yZWYiOiJzaGEyNTY6ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZiIsInByb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJyZWZ1bmRfYW1vdW50Ijp7ImFtb3VudF9taW5vciI6IjEwMDAwMDAiLCJhc3NldF9pZCI6IlVTREMifSwicmVmdW5kX3Jlc3VsdCI6IkZVTEwiLCJ0aW1lc3RhbXBfbXMiOjE3NDg1MzUwMDAwMDB9LCJyZWNlaXB0X2Zvcm1hdCI6InJlZnVuZC1yZWNlaXB0LXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OjJiM2RmODMzNWU0YzcwN2M2ODVhNWUyNDcyMjFhNTVhYzk3ZDBhMjIxZjJlOTM3MmI2MmU5ZTY4NjM2YzY3ZmUifQ==",
+      "expected_frame_id": "sha256:d4521adabf85038db585e813700612026a1eda01babd54d860ffc48b02edf9e5"
+    },
+    {
+      "vector_id": "pef_v1_007",
+      "description": "payment_refund PARTIAL",
+      "claim_type": "payment_refund",
+      "receipt_format": "refund-receipt-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_refund",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "original_payment_ref": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "provider_did": "did:web:api.algovoi.co.uk",
+          "refund_amount": {
+            "amount_minor": "500000",
+            "asset_id": "USDC"
+          },
+          "refund_result": "PARTIAL",
+          "timestamp_ms": 1748535100000
+        },
+        "receipt_format": "refund-receipt-v1",
+        "receipt_hash": "sha256:262fa9db8135e4214ffda074a584a0ef18557e41384e71d3cbf76223f758fd36"
+      },
+      "receipt": {
+        "original_payment_ref": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "provider_did": "did:web:api.algovoi.co.uk",
+        "refund_amount": {
+          "amount_minor": "500000",
+          "asset_id": "USDC"
+        },
+        "refund_result": "PARTIAL",
+        "timestamp_ms": 1748535100000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJvcmlnaW5hbF9wYXltZW50X3JlZiI6InNoYTI1NjowMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwicHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInJlZnVuZF9hbW91bnQiOnsiYW1vdW50X21pbm9yIjoiNTAwMDAwIiwiYXNzZXRfaWQiOiJVU0RDIn0sInJlZnVuZF9yZXN1bHQiOiJQQVJUSUFMIiwidGltZXN0YW1wX21zIjoxNzQ4NTM1MTAwMDAwfQ==",
+      "expected_receipt_hash": "sha256:262fa9db8135e4214ffda074a584a0ef18557e41384e71d3cbf76223f758fd36",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X3JlZnVuZCIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsib3JpZ2luYWxfcGF5bWVudF9yZWYiOiJzaGEyNTY6MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInByb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJyZWZ1bmRfYW1vdW50Ijp7ImFtb3VudF9taW5vciI6IjUwMDAwMCIsImFzc2V0X2lkIjoiVVNEQyJ9LCJyZWZ1bmRfcmVzdWx0IjoiUEFSVElBTCIsInRpbWVzdGFtcF9tcyI6MTc0ODUzNTEwMDAwMH0sInJlY2VpcHRfZm9ybWF0IjoicmVmdW5kLXJlY2VpcHQtdjEiLCJyZWNlaXB0X2hhc2giOiJzaGEyNTY6MjYyZmE5ZGI4MTM1ZTQyMTRmZmRhMDc0YTU4NGEwZWYxODU1N2U0MTM4NGU3MWQzY2JmNzYyMjNmNzU4ZmQzNiJ9",
+      "expected_frame_id": "sha256:acede3c9c2a7e81e4ba3e3e826a0fc4b71159c5a5f54aec4b2e02245ee508636"
+    },
+    {
+      "vector_id": "pef_v1_008",
+      "description": "composite_verdict TRUSTED over 2 receipts",
+      "claim_type": "composite_verdict",
+      "receipt_format": "composite-trust-query-v1",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "composite_verdict",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "evaluated_at": "2026-05-30T08:00:00Z",
+          "receipt_count": 2,
+          "trust_outcome": "TRUSTED"
+        },
+        "receipt_format": "composite-trust-query-v1",
+        "receipt_hash": "sha256:7b391ad2cf9e935b7500d2037c2c8e5902b57526a342400a01005ca6ce3797b8"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "evaluated_at": "2026-05-30T08:00:00Z",
+        "receipt_count": 2,
+        "trust_outcome": "TRUSTED"
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImV2YWx1YXRlZF9hdCI6IjIwMjYtMDUtMzBUMDg6MDA6MDBaIiwicmVjZWlwdF9jb3VudCI6MiwidHJ1c3Rfb3V0Y29tZSI6IlRSVVNURUQifQ==",
+      "expected_receipt_hash": "sha256:7b391ad2cf9e935b7500d2037c2c8e5902b57526a342400a01005ca6ce3797b8",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJjb21wb3NpdGVfdmVyZGljdCIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsiY2Fub25fdmVyc2lvbiI6InVybjp4NDAyOmNhbm9uaWNhbGlzYXRpb246amNzLXJmYzg3ODUtdjEiLCJldmFsdWF0ZWRfYXQiOiIyMDI2LTA1LTMwVDA4OjAwOjAwWiIsInJlY2VpcHRfY291bnQiOjIsInRydXN0X291dGNvbWUiOiJUUlVTVEVEIn0sInJlY2VpcHRfZm9ybWF0IjoiY29tcG9zaXRlLXRydXN0LXF1ZXJ5LXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OjdiMzkxYWQyY2Y5ZTkzNWI3NTAwZDIwMzdjMmM4ZTU5MDJiNTc1MjZhMzQyNDAwYTAxMDA1Y2E2Y2UzNzk3YjgifQ==",
+      "expected_frame_id": "sha256:4a09ba6fd7f53bbb027998361ea72813a464347accad27249d13b39a6343850f"
+    }
+  ]
+}
