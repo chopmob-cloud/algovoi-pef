@@ -4,10 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "algovoi-pef"
-version = "0.1.1"
+version = "0.1.2"
 description = "Payment Evidence Frame (PEF) v1 -- AlgoVoi's canonical wrapper for payment-lifecycle receipts"
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.9"
 dependencies = [
     "rfc8785>=0.1.4",
@@ -19,7 +20,6 @@ keywords = [
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",

@@ -1,11 +1,12 @@
 {
   "name": "@algovoi/pef",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Payment Evidence Frame (PEF) v1 -- AlgoVoi canonical wrapper for payment-lifecycle receipts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "NOTICE"
   ],
   "scripts": {
     "build": "tsc",

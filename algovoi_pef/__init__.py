@@ -22,7 +22,7 @@ except ImportError as exc:  # pragma: no cover
         "algovoi-pef requires rfc8785>=0.1.4 -- pip install rfc8785"
     ) from exc
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __all__ = [
     "build_pef",
     "verify_pef",
