@@ -209,9 +209,11 @@ Full attestation record and reproducible runner harnesses:
 [`_attestations/2026-05-30-8-impl-pef-v1.md`](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors/blob/main/_attestations/2026-05-30-8-impl-pef-v1.md)
 in [`chopmob-cloud/algovoi-jcs-conformance-vectors`](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors).
 
-The same corpus now has **576/576 cumulative byte-for-byte agreements** across
-eight vector sets covering the full AlgoVoi agentic-payment receipt stack
-(admission, settlement, cancellation, refund, composite verdict, PEF).
+The same eight implementations cross validate the broader AlgoVoi receipt corpus
+(admission, settlement, cancellation, refund, composite verdict, PEF, and further
+sets). The current cumulative agreement count is tracked in the corpus repo
+[`chopmob-cloud/algovoi-jcs-conformance-vectors`](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors),
+which is the source of truth.
 
 ## Conformance vectors
 
