@@ -170,10 +170,27 @@ def verify_pef(frame: dict[str, Any]) -> dict[str, Any]:
     Does NOT verify the RFC 9421 signature field -- that requires
     the algovoi-rfc9421-verifier package and the signer's public key.
 
+    Frame-layer signature stance
+    ----------------------------
+    A PEF may carry a detached RFC 9421 ``signature`` string, but that
+    signature is an artefact of the HTTP transport that originally
+    delivered the frame. When a frame is carried as an A2A DataPart (or
+    any non-HTTP artefact) it arrives with no HTTP message context: no
+    ``Signature-Input``, no ``@signature-params``, no covered-component
+    list. A frame-layer verifier therefore MUST NOT reconstruct
+    ``Signature-Input``, MUST NOT infer covered components, and MUST NOT
+    derive a verification key from ``frame_provider_did``. It reports the
+    signature as unverified (``signature_verified`` is always False here)
+    and defers real signature verification to the transport layer that
+    holds the HTTP context. The portability properties (``frame_id`` and
+    ``receipt_hash``) remain fully checkable without any transport
+    context.
+
     Returns
     -------
     dict
-        {"valid": bool, "errors": list[str]}
+        {"valid": bool, "errors": list[str],
+         "signature_present": bool, "signature_verified": bool}
     """
     errors: list[str] = []
 
@@ -228,4 +245,12 @@ def verify_pef(frame: dict[str, Any]) -> dict[str, Any]:
             f"got {frame.get('frame_id')!r}"
         )
 
-    return {"valid": len(errors) == 0, "errors": errors}
+    return {
+        "valid": len(errors) == 0,
+        "errors": errors,
+        # Transport signature is never verified at the frame layer: with no
+        # HTTP message context (e.g. an A2A DataPart) it MUST be reported as
+        # unverified rather than reconstructed or key-derived from the frame.
+        "signature_present": "signature" in frame,
+        "signature_verified": False,
+    }

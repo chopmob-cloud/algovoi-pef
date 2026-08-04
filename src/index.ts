@@ -68,6 +68,16 @@ export interface Pef {
 export interface VerifyResult {
   valid:  boolean;
   errors: string[];
+  /** Whether the frame carries a detached RFC 9421 signature string. */
+  signature_present: boolean;
+  /**
+   * Always false at the frame layer. A PEF carried as an A2A DataPart
+   * arrives with no HTTP message context (no Signature-Input, no
+   * @signature-params, no covered components), so a frame-layer verifier
+   * MUST report the transport signature as unverified rather than
+   * reconstruct that context or derive a key from frame_provider_did.
+   */
+  signature_verified: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -197,5 +207,13 @@ export function verifyPef(frame: Record<string, unknown>): VerifyResult {
     );
   }
 
-  return { valid: errors.length === 0, errors };
+  return {
+    valid: errors.length === 0,
+    errors,
+    // Transport signature is never verified at the frame layer: with no HTTP
+    // message context (e.g. an A2A DataPart) it MUST be reported as unverified
+    // rather than reconstructed or key-derived from the frame.
+    signature_present: Object.prototype.hasOwnProperty.call(frame, "signature"),
+    signature_verified: false,
+  };
 }

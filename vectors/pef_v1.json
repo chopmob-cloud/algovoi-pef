@@ -1,6 +1,6 @@
 {
   "vector_set_id": "pef_v1",
-  "description": "Payment Evidence Frame v1 -- frame_id canonicalisation vectors. 8 vectors across all 5 PEF claim types.",
+  "description": "Payment Evidence Frame v1 -- frame_id canonicalisation vectors. 9 vectors across all 5 PEF claim types, including 1 negative A2A-transport vector where a carried RFC 9421 signature MUST report unverified at the frame layer.",
   "canon_pin": "urn:x402:canonicalisation:jcs-rfc8785-v1",
   "pef_version": "1",
   "vectors": [
@@ -315,6 +315,69 @@
       "expected_receipt_hash": "sha256:7b391ad2cf9e935b7500d2037c2c8e5902b57526a342400a01005ca6ce3797b8",
       "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJjb21wb3NpdGVfdmVyZGljdCIsImZyYW1lX3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJmcmFtZV90aW1lc3RhbXBfbXMiOjE3NDg1MzQ2MDAwMDAsInBlZl92ZXJzaW9uIjoiMSIsInJlY2VpcHQiOnsiY2Fub25fdmVyc2lvbiI6InVybjp4NDAyOmNhbm9uaWNhbGlzYXRpb246amNzLXJmYzg3ODUtdjEiLCJldmFsdWF0ZWRfYXQiOiIyMDI2LTA1LTMwVDA4OjAwOjAwWiIsInJlY2VpcHRfY291bnQiOjIsInRydXN0X291dGNvbWUiOiJUUlVTVEVEIn0sInJlY2VpcHRfZm9ybWF0IjoiY29tcG9zaXRlLXRydXN0LXF1ZXJ5LXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OjdiMzkxYWQyY2Y5ZTkzNWI3NTAwZDIwMzdjMmM4ZTU5MDJiNTc1MjZhMzQyNDAwYTAxMDA1Y2E2Y2UzNzk3YjgifQ==",
       "expected_frame_id": "sha256:4a09ba6fd7f53bbb027998361ea72813a464347accad27249d13b39a6343850f"
+    },
+    {
+      "vector_id": "pef_v1_009",
+      "description": "NEGATIVE -- signed payment_settlement frame carried as an A2A DataPart with no HTTP context. The frame carries an RFC 9421 detached signature, but it is delivered inside an A2A artifact with no Signature-Input, no @signature-params, and no covered-component context. A frame-layer verifier MUST report the transport signature as unverified (signature_verified false) rather than valid, while frame_id and receipt_hash still validate so the portability property is preserved.",
+      "negative": true,
+      "claim_type": "payment_settlement",
+      "receipt_format": "settlement-attestation-v1",
+      "transport": {
+        "channel": "a2a-datapart",
+        "http_message_context_present": false,
+        "signature_input_present": false,
+        "covered_components_present": false,
+        "note": "Frame serialized through an A2A artifact DataPart. No accompanying HTTP request/response, so RFC 9421 Signature-Input and @signature-params are absent and no covered components can be resolved."
+      },
+      "signature": "sig1=:MEUCIQD9nJ4kZ0oQK7oPmXr2vN0aQ1bYh8sTf3wL6cRxE2pGZAIg9tL4wK1oXbN7pR3cVfH0eDsQ2mYt5uJ8kA6nBxW3lc=:",
+      "preimage": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "claim_type": "payment_settlement",
+        "frame_provider_did": "did:web:api.algovoi.co.uk",
+        "frame_timestamp_ms": 1748534600000,
+        "pef_version": "1",
+        "receipt": {
+          "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+          "settled_payment_ref": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+          "settlement_amount": {
+            "amount_minor": "1000000",
+            "asset_id": "USDC"
+          },
+          "settlement_chain": "algo",
+          "settlement_provider_did": "did:web:api.algovoi.co.uk",
+          "settlement_result": "SETTLED",
+          "settlement_timestamp_ms": 1748534700000
+        },
+        "receipt_format": "settlement-attestation-v1",
+        "receipt_hash": "sha256:07b4feb89a3fbf030a85c31073f6ecc01fc8e215e547530aafe5ff932cd1aa2e"
+      },
+      "receipt": {
+        "canon_version": "urn:x402:canonicalisation:jcs-rfc8785-v1",
+        "settled_payment_ref": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+        "settlement_amount": {
+          "amount_minor": "1000000",
+          "asset_id": "USDC"
+        },
+        "settlement_chain": "algo",
+        "settlement_provider_did": "did:web:api.algovoi.co.uk",
+        "settlement_result": "SETTLED",
+        "settlement_timestamp_ms": 1748534700000
+      },
+      "expected_receipt_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsInNldHRsZWRfcGF5bWVudF9yZWYiOiJzaGEyNTY6MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSIsInNldHRsZW1lbnRfYW1vdW50Ijp7ImFtb3VudF9taW5vciI6IjEwMDAwMDAiLCJhc3NldF9pZCI6IlVTREMifSwic2V0dGxlbWVudF9jaGFpbiI6ImFsZ28iLCJzZXR0bGVtZW50X3Byb3ZpZGVyX2RpZCI6ImRpZDp3ZWI6YXBpLmFsZ292b2kuY28udWsiLCJzZXR0bGVtZW50X3Jlc3VsdCI6IlNFVFRMRUQiLCJzZXR0bGVtZW50X3RpbWVzdGFtcF9tcyI6MTc0ODUzNDcwMDAwMH0=",
+      "expected_receipt_hash": "sha256:07b4feb89a3fbf030a85c31073f6ecc01fc8e215e547530aafe5ff932cd1aa2e",
+      "expected_preimage_jcs_bytes_b64": "eyJjYW5vbl92ZXJzaW9uIjoidXJuOng0MDI6Y2Fub25pY2FsaXNhdGlvbjpqY3MtcmZjODc4NS12MSIsImNsYWltX3R5cGUiOiJwYXltZW50X3NldHRsZW1lbnQiLCJmcmFtZV9wcm92aWRlcl9kaWQiOiJkaWQ6d2ViOmFwaS5hbGdvdm9pLmNvLnVrIiwiZnJhbWVfdGltZXN0YW1wX21zIjoxNzQ4NTM0NjAwMDAwLCJwZWZfdmVyc2lvbiI6IjEiLCJyZWNlaXB0Ijp7ImNhbm9uX3ZlcnNpb24iOiJ1cm46eDQwMjpjYW5vbmljYWxpc2F0aW9uOmpjcy1yZmM4Nzg1LXYxIiwic2V0dGxlZF9wYXltZW50X3JlZiI6InNoYTI1NjoxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExIiwic2V0dGxlbWVudF9hbW91bnQiOnsiYW1vdW50X21pbm9yIjoiMTAwMDAwMCIsImFzc2V0X2lkIjoiVVNEQyJ9LCJzZXR0bGVtZW50X2NoYWluIjoiYWxnbyIsInNldHRsZW1lbnRfcHJvdmlkZXJfZGlkIjoiZGlkOndlYjphcGkuYWxnb3ZvaS5jby51ayIsInNldHRsZW1lbnRfcmVzdWx0IjoiU0VUVExFRCIsInNldHRsZW1lbnRfdGltZXN0YW1wX21zIjoxNzQ4NTM0NzAwMDAwfSwicmVjZWlwdF9mb3JtYXQiOiJzZXR0bGVtZW50LWF0dGVzdGF0aW9uLXYxIiwicmVjZWlwdF9oYXNoIjoic2hhMjU2OjA3YjRmZWI4OWEzZmJmMDMwYTg1YzMxMDczZjZlY2MwMWZjOGUyMTVlNTQ3NTMwYWFmZTVmZjkzMmNkMWFhMmUifQ==",
+      "expected_frame_id": "sha256:75b6e70962ee4d8b50918265661915eaa2bf15d1dd3c8e794a61274bb09b96ca",
+      "expected": {
+        "frame_id_valid": true,
+        "receipt_hash_valid": true,
+        "signature_present": true,
+        "signature_verified": false
+      },
+      "verifier_must_not": [
+        "reconstruct Signature-Input from the frame",
+        "infer covered components",
+        "derive a verification key from frame_provider_did"
+      ]
     }
   ]
 }

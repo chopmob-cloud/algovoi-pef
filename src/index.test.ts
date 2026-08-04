@@ -6,6 +6,8 @@
 
 import { strict as assert } from "assert";
 import { describe, it } from "node:test";
+import { readFileSync } from "fs";
+import { join } from "path";
 import {
   CANON_VERSION,
   CLAIM_TYPES,
@@ -198,4 +200,62 @@ describe("buildPef -- error paths", () => {
       /non-negative integer/
     );
   });
+});
+
+// ---------------------------------------------------------------------------
+// 7. Negative A2A-transport vector -- carried RFC 9421 signature stays unverified
+//
+// Reviewer property (A2A PR #1898): a signed frame serialized through an A2A
+// DataPart arrives with no HTTP message context. The frame-layer verifier must
+// keep frame_id / receipt_hash valid (portability preserved) yet report the
+// transport signature as unverified -- never valid.
+// ---------------------------------------------------------------------------
+
+const VECTORS = JSON.parse(
+  readFileSync(join(__dirname, "..", "vectors", "pef_v1.json"), "utf-8")
+) as { vectors: any[] };
+
+const NEGATIVE_VECTORS = VECTORS.vectors.filter((v) => v.negative);
+
+describe("negative A2A-transport signature vectors", () => {
+  it("at least one negative vector is present", () => {
+    assert.ok(NEGATIVE_VECTORS.length > 0, "no negative vector in pef_v1.json");
+  });
+
+  for (const v of NEGATIVE_VECTORS) {
+    it(`${v.vector_id}: carried signature reports unverified, frame_id parity holds`, () => {
+      const pre = v.preimage;
+
+      const signed = buildPef({
+        claim_type: pre.claim_type,
+        receipt: pre.receipt,
+        frame_provider_did: pre.frame_provider_did,
+        frame_timestamp_ms: pre.frame_timestamp_ms,
+        signature: v.signature,
+      });
+      assert.equal(signed.signature, v.signature);
+
+      // Portability: signature excluded from frame_id; matches Python vector.
+      assert.equal(signed.receipt_hash, v.expected_receipt_hash);
+      assert.equal(signed.frame_id, v.expected_frame_id);
+      assert.equal(pefFrameId(signed), v.expected_frame_id);
+
+      // Same preimage without signature yields the same frame_id.
+      const unsigned = buildPef({
+        claim_type: pre.claim_type,
+        receipt: pre.receipt,
+        frame_provider_did: pre.frame_provider_did,
+        frame_timestamp_ms: pre.frame_timestamp_ms,
+      });
+      assert.equal(unsigned.frame_id, signed.frame_id);
+
+      // Frame-layer verification: valid, signature present but unverified.
+      const r = verifyPef(signed);
+      assert.equal(r.valid, v.expected.frame_id_valid);
+      assert.equal(r.valid, v.expected.receipt_hash_valid);
+      assert.equal(r.signature_present, v.expected.signature_present);
+      assert.equal(r.signature_verified, v.expected.signature_verified);
+      assert.equal(r.signature_verified, false);
+    });
+  }
 });
