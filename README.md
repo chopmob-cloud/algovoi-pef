@@ -1,7 +1,3 @@
-> **AlgoVoi is available for acquisition** -- [docs.algovoi.co.uk/acquisition](https://docs.algovoi.co.uk/acquisition)
-
----
-
 # algovoi-pef
 
 [![PyPI](https://img.shields.io/pypi/v/algovoi-pef)](https://pypi.org/project/algovoi-pef/)
