@@ -1,6 +1,6 @@
 # algovoi-pef
 
-[![PyPI](https://img.shields.io/pypi/v/algovoi-pef)](https://pypi.org/project/algovoi-pef/)
+[![PyPI](https://img.shields.io/pypi/v/algovoi-pef)](https://pypi.org/project/algovoi-pef/) [![algovoi-jcs-conformance-vectors](https://img.shields.io/badge/algovoi--jcs--conformance--vectors-8A2BE2)](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors)
 [![npm](https://img.shields.io/npm/v/@algovoi/pef)](https://www.npmjs.com/package/@algovoi/pef)
 [![Cross-validated](https://img.shields.io/badge/cross--validated-64%2F64-brightgreen)](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors/blob/main/_attestations/2026-05-30-8-impl-pef-v1.md)
 [![Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-green)](./LICENSE)
